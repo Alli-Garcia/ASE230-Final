@@ -3,7 +3,7 @@ Final for ASE230
 
 user credentials:
 username: Sally password: 123
-username: dan password: 123
+username: Alice password: 123
 username: George password: 123
 
 admin credentials:

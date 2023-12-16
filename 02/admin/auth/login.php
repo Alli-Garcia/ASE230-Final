@@ -159,47 +159,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <div class="col-lg-8">
                     <div class="custom-form mt-4 pt-4">
-                        <form method="post" name="myForm" onsubmit="return validateForm()">
-                            <p id="error-msg"></p>
-                            <div id="simple-msg"></div>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group mt-2">
-                                    <input type="text" name="username" type="required" class="form-control"
-                                            placeholder="Your username*">
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="form-group mt-2">
-                                        <input name="textl" id="password" type="required" class="form-control"
-                                            placeholder="Your password*">
-                                    </div>
-                                </div>
-                            </div>
-                            <!--<div class="row">
-                                <div class="col-lg-12">
-                                    <div class="form-group mt-2">
-                                        <input type="text" class="form-control" id="subject"
-                                            placeholder="Your Subject.." />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="form-group mt-2">
-                                    <input name="email" id="email" type="email" class="form-control"
-                                            placeholder="Your email">
-                                    </div>-->
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-12 text-end">
-                    
-                                    <input type="submit" id="submit" name="send" class="submitBnt btn btn-primary"
-                                        value="Login">
-                                </div>
-                            </div>
-                        </form>
+                    <form method="post" name="myForm" onsubmit="return validateForm()">
+    <p id="error-msg"></p>
+    <div id="simple-msg"></div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group mt-2">
+                <input type="text" name="username" type="required" class="form-control" placeholder="Your username*">
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="form-group mt-2">
+                <input name="textl" id="password" type="required" class="form-control" placeholder="Your password*">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 text-end">
+            <input type="submit" id="submit" name="send" class="submitBnt btn btn-primary" value="Login">
+        </div>
+    </div>
+</form>
+
                     </div>
                 </div>
             </div>

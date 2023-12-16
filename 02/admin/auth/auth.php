@@ -31,10 +31,16 @@ function authenticateUser($username, $password) {
     // Fetch the result
     $stmt->fetch();
 
+    // Debugging
+    echo "Hashed Password from Database: " . $hashed_password . "<br>";
+    echo "Submitted Password: " . $password . "<br>";
+
     if ($hashed_password && password_verify($password, $hashed_password)) {
         $_SESSION['user_id'] = $user_id;
         $_SESSION['username'] = $username;
         return true;
+    } else {
+        echo "Password verification failed.<br>";
     }
 
     return false;
