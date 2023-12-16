@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <a data-scroll href="../../admin/contacts/index.php" class="nav-link">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a data-scroll href="../../auth/login.php" class="nav-link">Login</a>
+                        <a data-scroll href="../../admin/auth/login.php" class="nav-link">Login</a>
                     </li>  
 
                 </ul>

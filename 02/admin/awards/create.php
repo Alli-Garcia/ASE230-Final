@@ -5,28 +5,38 @@ require __DIR__ . '/awards.php';
 // Create an instance of AwardManager
 $awardManager = new AwardManager($pdo);
 
-
-// Check if the form is submitted for creating a new award
-if(isset($_POST['submit'])){
-    // Check if the keys exist in $_POST
-    if(isset($_POST['year']) && isset($_POST['description'])){
-        // Assuming you have form fields named 'year' and 'description'
-        $year = $_POST['year'];
-        $description = $_POST['description'];
-
-        // Call the create method from the AwardManager
-        $ref = $awardManager->create($year, $description);
-
-        // Redirect to the index page with the correct 'id' parameter
-        header("Location: index.php?id=" . ($ref - 1));
-        exit();
-    } else {
-        // Handle the case where 'year' or 'description' is not set
-        // You might want to display an error message or redirect back to the form
-        //echo "Error: Missing 'year' or 'description' in the form submission.";
-    }
+// Check if the user is logged in and is an admin
+session_start();
+if (!isset($_SESSION['username'])) {
+    // Redirect if the user is not logged in
+    header("Location: index.php");
+    exit();
 }
+
+$loggedInUsername = $_SESSION['username'];
+
+// Define a simple isAdmin function
+function isAdmin($pdo, $username)
+{
+    $stmt = $pdo->prepare("SELECT is_admin FROM users WHERE username = :username");
+    $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result && $result['is_admin'] == 1;
+}
+
+if (!isAdmin($pdo, $loggedInUsername)) {
+    // Display an alert message if the user is not an admin
+    echo '<script>alert("You are not an admin. Access denied."); window.location.href="index.php";</script>';
+    // You can also include additional HTML or redirect the user if needed
+    exit();
+}
+
+// Rest of your code...
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

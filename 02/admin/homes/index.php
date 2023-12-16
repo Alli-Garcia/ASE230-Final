@@ -59,14 +59,14 @@ $homes = $homesManager->index();
                         <a data-scroll href="../../admin/contacts/index.php" class="nav-link">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a data-scroll href="../../auth/login.php" class="nav-link">Login</a>
+                        <a data-scroll href="../../admin/auth/login.php" class="nav-link">Login</a>
                     </li>  
 
                 </ul>
                 <div class="nav-button ms-auto">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a data-scroll href="../02/admin/auth/registration.php">
+                            <a data-scroll href="../../admin/auth/registration.php">
                             <button type="button"
                                 class="btn btn-primary navbar-btn btn-rounded waves-effect waves-light">Sign Up</button>
                         </li>
@@ -85,8 +85,8 @@ $homes = $homesManager->index();
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-white text-center">
                     <h4 class="home-small-title">EverGreen Estates Realty</h4>
-                    <h1 class="home-title">Registration</h1>
-                    <p class="pt-3 home-desc mx-auto">Sign up to find homes in your area.</p>
+                    <h1 class="home-title">Listings</h1>
+                    <p class="pt-3 home-desc mx-auto">Look at all these cool places to live!</p>
                     <p class="play-shadow mt-4" data-bs-toggle="modal" data-bs-target="#watchvideomodal"><a
                             href="javascript: void(0);" class="play-btn video-play-icon"><i
                                 class="mdi mdi-play text-center"></i></a></p>

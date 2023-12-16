@@ -49,14 +49,14 @@ echo <<<'HTML'
     <link rel="shortcut icon" href="images/favicon.ico" />
 
     <!-- css -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
     <!-- icon -->
-    <link href="css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="css/pe-icon-7-stroke.css" />
+    <link href="../../css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../css/pe-icon-7-stroke.css" />
 
-    <link href="css/style.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="css/colors/cyan.css" id="color-opt">
+    <link href="../../css/style.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../../css/colors/cyan.css" id="color-opt">
 </head>
 
 <body data-bs-theme="light">
@@ -81,19 +81,19 @@ echo <<<'HTML'
                         <a data-scroll href="#home" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="02/admin/awards/index.php" class="nav-link">Awards</a>
+                        <a href="index.php" class="nav-link">Awards</a>
                     </li>
                     <li class="nav-item">
-                        <a data-scroll href="02/admin/homes/index.php" class="nav-link">Listings</a>
+                        <a data-scroll href="../../admin/homes/index.php" class="nav-link">Listings</a>
                     </li>
                     <li class="nav-item">
-                        <a data-scroll href="02/admin/team/index.php" class="nav-link">Teams</a>
+                        <a data-scroll href="../../admin/team/index.php" class="nav-link">Teams</a>
                     </li>
                     <li class="nav-item">
-                        <a data-scroll href="02/admin/contacts/index.php" class="nav-link">Contact</a>
+                        <a data-scroll href="../../admin/contacts/index.php" class="nav-link">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a data-scroll href="02/admin/auth/index.php" class="nav-link">Login</a>
+                        <a data-scroll href="../../admin/auth/index.php" class="nav-link">Login</a>
                     </li>
                 </ul>
             </div>
@@ -105,6 +105,11 @@ echo <<<'HTML'
                             <a data-scroll href="../02/admin/auth/registration.php">
                             <button type="button"
                                 class="btn btn-primary navbar-btn btn-rounded waves-effect waves-light">Sign Up</button>
+                        </li>
+                        <li>
+                            <form action="logout.php" method="post">
+                                <button type="submit" class="btn btn-primary navbar-btn btn-rounded waves-effect waves-light">Logout</button>
+                            </form>
                         </li>
                     </ul>
                 </div>
@@ -168,25 +173,25 @@ echo <<<'HTML'
             <div class="row">
                 <div class="col-md-3">
                     <div class="client-images my-3 my-md-0">
-                        <img src="images/clients/1.png" alt="logo-img" class="mx-auto img-fluid d-block">
+                        <img src="../../images/clients/1.png" alt="logo-img" class="mx-auto img-fluid d-block">
                     </div>
                 </div>
 
                 <div class="col-md-3">
                     <div class="client-images my-3 my-md-0">
-                        <img src="images/clients/2.png" alt="logo-img" class="mx-auto img-fluid d-block">
+                        <img src="../../images/clients/2.png" alt="logo-img" class="mx-auto img-fluid d-block">
                     </div>
                 </div>
 
                 <div class="col-md-3 ">
                     <div class="client-images my-3 my-md-0">
-                        <img src="images/clients/3.png" alt="logo-img" class="mx-auto img-fluid d-block">
+                        <img src="../../images/clients/3.png" alt="logo-img" class="mx-auto img-fluid d-block">
                     </div>
                 </div>
 
                 <div class="col-md-3">
                     <div class="client-images my-3 my-md-0">
-                        <img src="images/clients/4.png" alt="logo-img" class="mx-auto img-fluid d-block">
+                        <img src="../../images/clients/4.png" alt="logo-img" class="mx-auto img-fluid d-block">
                     </div>
                 </div>
             </div>
@@ -214,7 +219,7 @@ echo <<<'HTML'
                 </div>
                 <div class="col-lg-7 order-1 order-lg-2">
                     <div class="features-img mx-auto me-lg-0">
-                        <img src="images/growth-analytics.svg" alt="macbook image" class="img-fluid">
+                        <img src="../../images/growth-analytics.svg" alt="macbook image" class="img-fluid">
                     </div>
                 </div>
             </div>
