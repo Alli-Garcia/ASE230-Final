@@ -124,8 +124,8 @@ echo <<<'HTML'
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-white text-center">
-                    <h4 class="home-small-title">Awards</h4>
-                    <h1 class="home-title">Our achievement</h1>
+                    <h4 class="home-small-title">Evergreen Estate Realty</h4>
+                    <h1 class="home-title">Awards</h1>
                     <p class="pt-3 home-desc mx-auto">Showcasing how we've helped others</p>
                     <p class="play-shadow mt-4" data-bs-toggle="modal" data-bs-target="#watchvideomodal"><a
                             href="javascript: void(0);" class="play-btn video-play-icon"><i
