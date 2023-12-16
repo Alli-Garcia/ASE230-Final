@@ -1,9 +1,7 @@
 <?php
-
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
 
 include_once 'db.php';
 include_once 'contacts.php';
@@ -11,10 +9,7 @@ include_once 'contacts.php';
 $contactManager = new ContactManager($pdo);
 $contactRequests = $contactManager->index();
 
-// Display the content
-echo <<<'HTML'
-<!DOCTYPE html>
-<html lang="en">
+?>
 
 
 <!DOCTYPE html>
@@ -84,12 +79,12 @@ echo <<<'HTML'
             <div class="nav-button ms-auto">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a data-scroll href="../02/admin/auth/registration.php">
+                        <a data-scroll href="../../admin/auth/registration.php">
                         <button type="button"
                             class="btn btn-primary navbar-btn btn-rounded waves-effect waves-light">Sign Up</button>
                     </li>
                     <li>
-                        <form action="logout.php" method="post">
+                        <form action="../../admin/auth/logout.php" method="post">
                             <button type="submit" class="btn btn-primary navbar-btn btn-rounded waves-effect waves-light">Logout</button>
                         </form>
                     </li>
@@ -139,25 +134,32 @@ echo <<<'HTML'
 </section>
 <!--END HOME-->
 
-<!-- Contact Requests Table -->
-                <h3>Contact Requests</h3>
+<section class="section" id="contact-requests">
+    <div class="container">
+        <!-- Contact Requests Table -->
+        <h3>Contact Requests</h3>
 
-                <table>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Action</th>
-                    </tr>
-                    <?php foreach ($contactRequests as $key => $request): ?>
-                        <tr>
-                            <td><?php echo $request['id']; ?></td>
-                            <td><?php echo $request['name']; ?></td>
-                            <td><?php echo $request['email']; ?></td>
-                            <td><a href="detail.php?id=<?php echo $request['id']; ?>">View Details</a></td>
-                        </tr>
-                    <?php endforeach; ?>
-                </table>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+            <?php foreach ($contactRequests as $key => $request): ?>
+                <tr>
+                    <td><?php echo $request['id']; ?></td>
+                    <td><?php echo $request['name']; ?></td>
+                    <td><?php echo $request['email']; ?></td>
+                    <td><a href="detail.php?id=<?php echo $request['id']; ?>">View Details</a></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+
+        <!-- Add the "Create Contact" button outside the loop -->
+        <button onclick="location.href='create.php'" class="btn btn-primary mt-3">Create Contact</button>
+    </div>
+</section>
 
  
 <!-- CLIENT LOGO -->
@@ -399,4 +401,3 @@ echo <<<'HTML'
     <script src="js/app.js"></script>
 </body>
 </html>
-HTML;?>

@@ -1,41 +1,63 @@
 <?php
 require('db.php');
+require('contacts.php');
 
-require('team.php');
+// Check if ID is provided in the URL
+if (isset($_GET['id'])) {
+    $contactRequestId = $_GET['id'];
 
-// Get index of the item to edit
-$index = $_GET['index'];
+    // Create an instance of ContactManager
+    $contactManager = new ContactManager($pdo);
 
+    // Retrieve the details of the specific contact request using the ContactManager instance
+    $contactRequest = $contactManager->detail($contactRequestId);
 
-// Create TeamManager instance with PDO
-$teamManager = new TeamManager($pdo);
+    if ($contactRequest) {
+        // Handle form submission
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Get the updated data from the form
+            $updatedData = [
+                'name' => $_POST['name'],
+                'email' => $_POST['email'],
+            ];
 
-// Get item to edit
-$item = $teamManager->getTeamMemberById($index); // Assuming you have a method to fetch a team member by ID
+            // Update the contact request in the MySQL database
+            $contactManager->edit($contactRequestId, $updatedData);
 
-// Handle form submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Get the updated data from the form
-    $updatedData = [
-        'Team member' => $_POST['team_member'],
-        'Role' => $_POST['role'],
-        'Bio' => $_POST['bio'],
-    ];
+            // Redirect to detail.php
+            header('Location: detail.php?id=' . $contactRequestId);
+            exit;
+        }
 
-    // Update the team member in the MySQL database
-    $teamManager->updateTeamMemberById($index, $updatedData); // Assuming you have a method to update a team member by ID
+        // Display a form with current contact request data to the user
+        ?>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Edit Contact Request</title>
+            <!-- Add your CSS styles or include Bootstrap if needed -->
+        </head>
+        <body>
+            <h1>Edit Contact Request</h1>
+            <!-- Display current data in the form -->
+            <form method="post" action="">
+                <label for="name">Name:</label>
+                <input type="text" name="name" value="<?php echo isset($contactRequest['name']) ? $contactRequest['name'] : ''; ?>"><br>
 
-    // Redirect to index.php
-    header('Location: index.php');
-    exit;
+                <label for="email">Email:</label>
+                <input type="text" name="email" value="<?php echo isset($contactRequest['email']) ? $contactRequest['email'] : ''; ?>"><br>
+
+                <input type="submit" value="Save changes">
+            </form>
+        </body>
+        </html>
+        <?php
+    } else {
+        echo 'Contact request not found.';
+    }
+} else {
+    echo 'ID parameter not provided.';
 }
-
-// Display a form with current item data to user
-echo '<form method="post" action="">'; // The action is empty to submit the form to the same page
-echo 'Team member: <input type="text" name="team_member" value="' . $item['Team member'] . '"><br>';
-echo 'Role: <input type="text" name="role" value="' . $item['Role'] . '"><br>';
-echo 'Bio: <textarea name="bio">' . $item['Bio'] . '</textarea><br>';
-echo '<input type="hidden" name="index" value="' . $index . '">';
-echo '<input type="submit" value="Save changes">';
-echo '</form>';
 ?>

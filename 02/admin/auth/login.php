@@ -64,19 +64,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <a data-scroll href="#home" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a data-scroll href="../02/admin/awards/index.php" class="nav-link">Awards</a>
+                        <a data-scroll href="../../admin/auth/login.php" class="nav-link">Awards</a>
                     </li>
                     <li class="nav-item">
-                        <a data-scroll href="../02/admin/products/index.php" class="nav-link">Listings</a>
+                        <a data-scroll href="../../admin/auth/login.php" class="nav-link">Listings</a>
                     </li>
                     <li class="nav-item">
-                        <a data-scroll href="../02/admin/team/index.php" class="nav-link">Teams</a>
+                        <a data-scroll href="../../admin/auth/login.php" class="nav-link">Teams</a>
                     </li>                    
                     <li class="nav-item">
-                        <a data-scroll href="../02/admin/contacts/index.php" class="nav-link">Contact</a>
+                        <a data-scroll href="../../admin/auth/login.php" class="nav-link">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a data-scroll href="../02/admin/auth/index.php" class="nav-link">Login</a>
+                        <a data-scroll href="../../admin/auth/login.php" class="nav-link">Login</a>
                     </li>  
 
                 </ul>
