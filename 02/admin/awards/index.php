@@ -102,12 +102,12 @@ echo <<<'HTML'
                 <div class="nav-button ms-auto">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a data-scroll href="../02/admin/auth/registration.php">
+                            <a data-scroll href="../../admin/auth/registration.php">
                             <button type="button"
                                 class="btn btn-primary navbar-btn btn-rounded waves-effect waves-light">Sign Up</button>
                         </li>
                         <li>
-                            <form action="logout.php" method="post">
+                            <form action="../../admin/auth/logout.php" method="post">
                                 <button type="submit" class="btn btn-primary navbar-btn btn-rounded waves-effect waves-light">Logout</button>
                             </form>
                         </li>
