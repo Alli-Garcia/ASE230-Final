@@ -106,9 +106,9 @@ $contactRequests = $contactManager->index();
                 <h1 class="home-title">Contacts</h1>
                 <p class="pt-3 home-desc mx-auto">Get in touch with us!</p>
                 <p class="play-shadow mt-4" data-bs-toggle="modal" data-bs-target="#watchvideomodal">
-                    <a href="javascript: void(0);" class="play-btn video-play-icon">
+                    
                         <i class="mdi mdi-play text-center"></i>
-                    </a>
+                    
                 </p>
 
                 <!-- Modal -->

@@ -127,9 +127,9 @@ echo <<<'HTML'
                     <h4 class="home-small-title">Evergreen Estate Realty</h4>
                     <h1 class="home-title">Awards</h1>
                     <p class="pt-3 home-desc mx-auto">Showcasing how we've helped others</p>
-                    <p class="play-shadow mt-4" data-bs-toggle="modal" data-bs-target="#watchvideomodal"><a
-                            href="javascript: void(0);" class="play-btn video-play-icon"><i
-                                class="mdi mdi-play text-center"></i></a></p>
+                    <p class="play-shadow mt-4" data-bs-toggle="modal" data-bs-target="#watchvideomodal">
+                            <i
+                                class="mdi mdi-play text-center"></i></p>
 
                     <!-- Modal -->
                     <div class="modal fade" id="watchvideomodal"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
