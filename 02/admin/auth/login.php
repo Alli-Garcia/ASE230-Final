@@ -103,22 +103,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <h4 class="home-small-title">EverGreen Estates Realty</h4>
                     <h1 class="home-title">Login</h1>
                     <p class="pt-3 home-desc mx-auto">Access your account</p>
-                    <p class="play-shadow mt-4" data-bs-toggle="modal" data-bs-target="#watchvideomodal"><i
-                                class="mdi mdi-play text-center"></i></p>
+                    <p class="play-shadow mt-4" data-bs-toggle="modal" data-bs-target="#watchvideomodal"><a
+                            href="javascript: void(0);" class="play-btn video-play-icon"><i
+                                class="mdi mdi-play text-center"></i></a></p>
                                 </div>         
-                    <!-- Modal -->
-                    <div class="modal fade" id="watchvideomodal"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-body p-0" style="margin-bottom: -8px;">
-                                    <video id="VisaChipCardVideo" class="video-box" controls  width="800" >
-                                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" >
-                                        <!--Browser does not support <video> tag -->
-                                    </video>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#watchvideomodal">
+    Watch Video
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="watchvideomodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-body p-0" style="margin-bottom: -8px;">
+                <video id="VisaChipCardVideo" class="video-box" controls width="800">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    <!-- Browser does not support <video> tag -->
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
                 </div>
             </div>
         </div>
