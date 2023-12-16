@@ -1,51 +1,44 @@
-<head>
-    <title>Create</title>
-    <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-</head>
-
 <?php
+session_start();
+
 require_once('db.php'); // Assuming you have a file with database connection code
 require_once('homes.php');
 
 $pdo = getPdo(); // Use your function to get the PDO instance
-?>
 
-<form method='post'>
-    <div class='form-group h-100 d-flex flex-column align-items-center justify-content-center'>
-        <label for='addressInput'>Address</label>
-        <input type='text' class='form-control' name='addressInput'>
-        <label for='cityInput'>City</label>
-        <input type='text' class='form-control' name='cityInput'>
-        <label for='stateInput'>State</label>
-        <input type='text' class='form-control' name='stateInput'>
-        <label for='zipcodeInput'>Zip Code</label>
-        <input type='text' class='form-control' name='zipcodeInput'>
-        <label for='imageInput'>Image URL</label>
-        <input type='text' class='form-control' name='imageInput'>
-        <input type="submit" name="submitButton" class="btn btn-primary mt-2" value="Submit" />
-    </div>
-</form>
+// Function to check if the user is an admin
 
-<?php
+function isAdmin($pdo, $username)
+{
+    // Assuming you have a 'users' table with an 'is_admin' column
+    $stmt = $pdo->prepare("SELECT is_admin FROM users WHERE username = :username");
+    $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+    $stmt->execute();
 
-if (isset($_POST['submitButton'])) {
-    $newHome = array(
-        'address' => $_POST['addressInput'],
-        'city' => $_POST['cityInput'],
-        'state' => $_POST['stateInput'],
-        'zipcode' => $_POST['zipcodeInput'],
-        'image' => $_POST['imageInput']
-    );
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Assuming you have a create function in your HomesManager class
-    $homesManager = new HomesManager($pdo);
-    $homesManager->create($newHome);
+    var_dump($result); // Add this line for debugging
 
-    header('Location: index.php');
+    return $result && $result['is_admin'] == 1;
+}
+
+// Check if the user is logged in
+if (isset($_SESSION['username'])) {
+    var_dump($_SESSION['username']);
+    $loggedInUsername = $_SESSION['username'];
+
+    // Check if the logged-in user is an admin
+    if (!isAdmin($pdo, $loggedInUsername)) {
+        // Display an alert message if the user is not an admin
+        echo '<script>alert("You are not an admin."); window.location.href="index.php";</script>';
+        // You can also include additional HTML or redirect the user if needed
+        exit();
+    }
+} else {
+    // Redirect to the login page if the user is not logged in
+    header('Location: login.php');
     exit();
 }
-?>
 
-<script src="../../js/bootstrap.bundle.min.js"></script>
-<script src="../../js/smooth-scroll.polyfills.min.js"></script>
-<script src="../../js/gumshoe.polyfills.min.js"></script>
+// Continue with the rest of the code only if the user is an admin
+?>
