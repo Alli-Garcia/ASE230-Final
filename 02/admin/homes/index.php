@@ -70,6 +70,11 @@ $homes = $homesManager->index();
                             <button type="button"
                                 class="btn btn-primary navbar-btn btn-rounded waves-effect waves-light">Sign Up</button>
                         </li>
+                        <li>
+                        <form action="../../admin/auth/logout.php" method="post">
+                            <button type="submit" class="btn btn-primary navbar-btn btn-rounded waves-effect waves-light">Logout</button>
+                        </form>
+                    </li>
                     </ul>
                 </div>
             </div>

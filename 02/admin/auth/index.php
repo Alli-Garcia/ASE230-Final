@@ -71,7 +71,7 @@ if (!isLoggedIn()) {
                 <div class="nav-button ms-auto">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a data-scroll href="../02/admin/auth/registration.php">
+                            <a data-scroll href="../../auth/registration.php">
                             <button type="button"
                                 class="btn btn-primary navbar-btn btn-rounded waves-effect waves-light">Sign Up</button>
                         </li>

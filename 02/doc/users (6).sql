@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2023 at 11:17 AM
+-- Generation Time: Dec 16, 2023 at 11:43 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -123,11 +123,11 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `is_admin`) VALUES
 (1, 'alli', '', '$2y$10$.nMHmddmCaGyZoFxJS2wLe4tGuiCVdH/U9A1BiUuNfJuG8s9E.yH.', 1),
-(2, 'dan', '', '$2y$10$Drrw5Uqr8wZeOKRVNeeFie9BGwnslMWxUTEUAcJk95DnZrmXxt.7q', 0),
-(3, 'tom', '', '$2y$10$kPqiCCJfLnBGhbNMa2Ije.1xztWqGtRi5uKRPZmmPvp9IQPlS9UW6', 0),
 (4, 'Mary', '', '$2y$10$P4hNEZpsX.xc1G9I2CfWFuuM8KCDYrVeHEvIMl6XgdPyUQHKIY1o2', 1),
 (5, 'George', '', '$2y$10$DSGj5Yt7u.3CEei6KHOpkedR9jrm/P6qF0Z.DKs.VhSaLB0PtTKDe', 0),
-(12, 'Sally', '', '$2y$10$qTtQ8DVMnomHnZRndxYj2OABoXodAmNCHoxzLWr.wl56xmeuAIErO', 0);
+(12, 'Sally', '', '$2y$10$qTtQ8DVMnomHnZRndxYj2OABoXodAmNCHoxzLWr.wl56xmeuAIErO', 0),
+(13, 'dan', '', '$2y$10$8TVSG7oaBwmJnaSFAr2Cg.fZeqEi3ANoF9q3YVk/z5AYURAjVS1c6', 1),
+(14, 'tom', '', '$2y$10$60q4CahO.chG/llQ8K3bJ.HgYUYCN8NG/qrNjqVGSDqUHY807DeHy', 1);
 
 --
 -- Indexes for dumped tables
@@ -195,7 +195,7 @@ ALTER TABLE `team`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables
